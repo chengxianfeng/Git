@@ -1,0 +1,42 @@
+﻿package com.example.springboot.Controller;
+
+import com.example.springboot.model.User;
+import com.example.springboot.service.UserService;
+import net.sf.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Date;
+@RestController
+@RequestMapping("mybatis")
+public class UserCRUDController {
+
+    @Autowired
+     UserService userService;
+    @RequestMapping("/saveUser")
+    public User saveUser() {
+        User user = new User();
+        user.setAge(12);
+        user.setName("cheng");
+        user.setBirthday(new Date());
+        user.setPassword("123456333");
+        userService.saveUser(user);
+        return user;
+    }
+    @RequestMapping("/update")
+    public void updateUser(){
+        User user = new User();
+        user.setAge(12);
+        user.setName("cheng");
+        user.setBirthday(new Date());
+        user.setPassword("123451111");
+        userService.updateUser(user);
+    }
+    @RequestMapping("/select")
+    public User selectUser(){
+        User user = userService.selectUser1("cheng");
+        JSONObject jsonObject = JSONObject.fromObject(user);
+        return user;
+    }
+}
