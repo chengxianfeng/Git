@@ -14,16 +14,7 @@ public class UserCRUDController {
 
     @Autowired
      UserService userService;
-    @RequestMapping("/saveUser")
-    public User saveUser() {
-        User user = new User();
-        user.setAge(12);
-        user.setName("cheng");
-        user.setBirthday(new Date());
-        user.setPassword("123456333");
-        userService.saveUser(user);
-        return user;
-    }
+ 
     @RequestMapping("/update")
     public void updateUser(){
         User user = new User();
