@@ -8,11 +8,6 @@
     <form action="/User/addUser" method="get">
         用户姓名:<input type="text" name="name"/>
         <br/>
-<<<<<<< HEAD
-		safsa
-=======
-		sdsdsds
->>>>>>> dev
         用户年龄:<input type="text" name="age"/>
         <br/>
         用户密码：<input type="password" name="password"/>
@@ -24,8 +19,5 @@
 </body>
 </html>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dev
-
+asdsadsa
